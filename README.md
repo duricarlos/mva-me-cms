@@ -1,61 +1,115 @@
-# 🚀 Getting started with Strapi
+# 🚀 Getting started with Strapi CMS
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+Este proyecto es un CMS (Content Management System) basado en [Strapi](https://strapi.io), diseñado para gestionar contenido de manera eficiente y flexible. Incluye una estructura modular que permite la personalización y escalabilidad según las necesidades del negocio.
+
+## 📂 Estructura del proyecto
+
+El proyecto está organizado de la siguiente manera:
+
+- **config/**: Contiene configuraciones clave del proyecto, como la base de datos, plugins, middlewares y el servidor.
+- **database/**: Incluye las migraciones necesarias para la base de datos.
+- **public/**: Archivos públicos como `robots.txt` y directorios de carga.
+- **src/**: Código fuente principal del CMS, dividido en:
+  - **admin/**: Configuración y personalización del panel de administración.
+  - **api/**: Módulos de API organizados por entidades como `sales-point`, `sales-zone` y `seller-profile`. Cada módulo incluye:
+    - **content-types/**: Esquemas de datos.
+    - **controllers/**: Lógica de controladores.
+    - **routes/**: Definición de rutas.
+    - **services/**: Lógica de negocio.
+  - **extensions/**: Extensiones personalizadas para ampliar la funcionalidad de Strapi.
+- **types/**: Tipos generados automáticamente para garantizar la consistencia del código.
+
+## 📋 Colecciones principales
+
+Este CMS incluye las siguientes colecciones principales:
+
+### 1. **Sales Point**
+
+- **Descripción**: Representa los puntos de venta donde se realizan transacciones.
+- **Campos principales**:
+  - Nombre del punto de venta.
+  - Ubicación.
+  - Identificador único.
+- **Funcionalidades**:
+  - Gestión de puntos de venta.
+  - API para crear, leer, actualizar y eliminar puntos de venta.
+
+### 2. **Sales Zone**
+
+- **Descripción**: Define las zonas de ventas asignadas a diferentes puntos de venta.
+- **Campos principales**:
+  - Nombre de la zona.
+  - Región geográfica.
+  - Relación con puntos de venta.
+- **Funcionalidades**:
+  - Gestión de zonas de ventas.
+  - API para operaciones CRUD.
+
+### 3. **Seller Profile**
+
+- **Descripción**: Contiene información sobre los vendedores asociados a los puntos de venta.
+- **Campos principales**:
+  - Nombre del vendedor.
+  - Información de contacto.
+  - Relación con zonas de ventas.
+- **Funcionalidades**:
+  - Gestión de perfiles de vendedores.
+  - API para operaciones CRUD.
+
+## 🚀 Comandos principales
 
 ### `develop`
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+Inicia la aplicación Strapi con autoReload habilitado. [Aprende más](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
-```
+```bash
 npm run develop
-# or
+# o
 yarn develop
 ```
 
 ### `start`
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+Inicia la aplicación Strapi con autoReload deshabilitado. [Aprende más](https://docs.strapi.io/dev-docs/cli#strapi-start)
 
-```
+```bash
 npm run start
-# or
+# o
 yarn start
 ```
 
 ### `build`
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+Compila el panel de administración. [Aprende más](https://docs.strapi.io/dev-docs/cli#strapi-build)
 
-```
+```bash
 npm run build
-# or
+# o
 yarn build
 ```
 
-## ⚙️ Deployment
+## ⚙️ Despliegue
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+Strapi ofrece múltiples opciones de despliegue, incluyendo [Strapi Cloud](https://cloud.strapi.io). Consulta la [documentación de despliegue](https://docs.strapi.io/dev-docs/deployment) para encontrar la mejor solución para tu caso de uso.
 
-```
+```bash
 yarn strapi deploy
 ```
 
-## 📚 Learn more
+## 📚 Recursos adicionales
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+- [Centro de recursos](https://strapi.io/resource-center) - Centro de recursos de Strapi.
+- [Documentación oficial](https://docs.strapi.io) - Documentación oficial de Strapi.
+- [Tutoriales](https://strapi.io/tutorials) - Lista de tutoriales creados por el equipo y la comunidad.
+- [Blog de Strapi](https://strapi.io/blog) - Blog oficial con artículos del equipo y la comunidad.
+- [Changelog](https://strapi.io/changelog) - Actualizaciones del producto, nuevas características y mejoras generales.
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+## ✨ Comunidad
 
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+- [Discord](https://discord.strapi.io) - Únete a la comunidad de Strapi, incluyendo el equipo principal.
+- [Foro](https://forum.strapi.io/) - Discute, haz preguntas, muestra tu proyecto y obtén retroalimentación.
+- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - Lista curada de recursos relacionados con Strapi.
 
 ---
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+<sub>🤫 Psst! [Strapi está contratando](https://strapi.io/careers).</sub>

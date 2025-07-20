@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "seller_profiles",
+  "info": {
+    "singularName": "seller-profile",
+    "pluralName": "seller-profiles",
+    "displayName": "seller-profile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "clerk_user_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "sales_zones": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sales-zone.sales-zone",
+      "mappedBy": "seller_profiles"
+    },
+    "sales_points": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sales-point.sales-point",
+      "mappedBy": "seller_profiles"
+    }
+  }
+}

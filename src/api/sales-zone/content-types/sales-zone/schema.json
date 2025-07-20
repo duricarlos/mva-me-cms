@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sales_zones",
+  "info": {
+    "singularName": "sales-zone",
+    "pluralName": "sales-zones",
+    "displayName": "sales-zone"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "coordinates": {
+      "type": "json",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "seller_profiles": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::seller-profile.seller-profile",
+      "inversedBy": "sales_zones"
+    }
+  }
+}
